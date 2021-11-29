@@ -15,6 +15,9 @@ set nowrap
 
 set backspace=indent,eol,start
 
+set path+=**
+set wildmenu
+
 nnoremap <Up> :echo "NO" <CR>
 nnoremap <Left> :echo "NO" <CR>
 nnoremap <Right> :echo "NO" <CR>
@@ -31,6 +34,7 @@ set laststatus=2
 call plug#begin('~/.vim/plugged')
 
 " Plug 'nvim-telescope/telescope.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'prettier/vim-prettier'
