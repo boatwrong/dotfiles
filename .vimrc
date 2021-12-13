@@ -33,15 +33,10 @@ set laststatus=2
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'nvim-telescope/telescope.nvim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'gruvbox-community/gruvbox'
-Plug 'tpope/vim-surround'
-Plug 'prettier/vim-prettier'
 Plug 'alvan/vim-closetag'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
 Plug 'itchyny/lightline.vim'
-Plug 'neovim/nvim-lspconfig'
+
 
 call plug#end()
 
@@ -49,3 +44,8 @@ colorscheme gruvbox
 
 let g:closetag_filenames = "*.html,*.js"
 let g:pretter#quickfix_enabled = 0
+
+let mapleader = "\<Space>"
+
+nnoremap <leader>yfo :YcmCompleter Format
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
