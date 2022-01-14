@@ -117,21 +117,11 @@ source $ZSH/oh-my-zsh.sh
 # color=always
 ##########################################################################
 
-function mcd() {
-	mkdir $1
-	cd $1
-}
-
-
-function commit() {
-	git add -A
-	git commit -m "$1"
-}
-
 alias la='ls -la --color=always'
 alias ll='ls -l --color=always'
 alias ls='ls --color=always'
 alias home='cd ~'
+alias c='clear'
 alias status='git status'
 alias python='python3'
 alias apps='cd ~/repos/reactApps'
@@ -143,10 +133,14 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias vim='nvim'
-alias a='cd ~'
-alias d='./a.out'
-alias c='clear'
-alias g='g++'
-alias mk='make'
-alias mka='make all'
-alias mkc='make clean'
+
+function mcd() {
+	mkdir $1
+	cd $1
+}
+
+
+function commit() {
+	git add -A
+	git commit -m "$1"
+}
