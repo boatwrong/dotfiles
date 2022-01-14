@@ -36,13 +36,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'alvan/vim-closetag'
 Plug 'itchyny/lightline.vim'
-
+Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
 colorscheme gruvbox 
 
-let g:closetag_filenames = "*.html,*.js"
+let g:closetag_filenames = "*.c,*.java,*.html,*.js"
 let g:pretter#quickfix_enabled = 0
 
 let mapleader = "\<Space>"
