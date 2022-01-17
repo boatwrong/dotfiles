@@ -127,9 +127,9 @@ function commit() {
 	git commit -m "$1"
 }
 
-alias la='ls -la --color=always'
-alias ll='ls -l --color=always'
-alias ls='ls --color=always'
+alias la='ls -la'
+alias ll='ls -l'
+alias ls='ls'
 alias status='git status'
 alias python='python3'
 alias apps='cd ~/repos/reactApps'
