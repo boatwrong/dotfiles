@@ -6,6 +6,9 @@ syntax enable
 set number
 set relativenumber
 set showcmd
+set signcolumn=yes
+set colorcolumn=80
+
 
 set autoindent
 set tabstop=4
@@ -59,3 +62,4 @@ nnoremap ,js :!node %<CR>
 nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>
 nnoremap ,c :-1read $HOME/.vim/.skeleton.c<CR>
 nnoremap <leader>cc <c-w>z
+nnoremap <leader>ycf :YcmCompleter FixIt

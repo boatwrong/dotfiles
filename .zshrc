@@ -122,7 +122,6 @@ function mcd() {
 	cd $1
 }
 
-
 function commit() {
 	git add -A
 	git commit -m "$1"
@@ -131,22 +130,23 @@ function commit() {
 alias la='ls -la --color=always'
 alias ll='ls -l --color=always'
 alias ls='ls --color=always'
-alias home='cd ~'
 alias status='git status'
 alias python='python3'
 alias apps='cd ~/repos/reactApps'
 alias push='git push'
-alias zz='nvim ~/dotfiles/.zshrc'
-alias nc='nvim ~/dotfiles/init.vim'
+alias zz='nvim ~/home/dotfiles/.zshrc'
+alias nc='nvim ~/home/dotfiles/init.vim'
 alias so='source ~/.zshrc'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias vim='nvim'
-alias a='cd ~'
+alias a='cd ~/home'
 alias d='./a.out'
 alias c='clear'
-alias g='g++'
 alias mk='make'
 alias mka='make all'
 alias mkc='make clean'
+alias home='cd ~/home'
+alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
+alias add='git add --all --verbose'
