@@ -47,6 +47,8 @@ call plug#end()
 
 colorscheme gruvbox 
 
+au FileType html let b:delimitMate_autoclose = 0
+
 let g:closetag_filenames = "*.c,*.java,*.html,*.js"
 let g:pretter#quickfix_enabled = 0
 
