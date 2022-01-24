@@ -32,6 +32,9 @@ noremap <Left> :echo "NO" <CR>
 noremap <Right> :echo "NO" <CR>
 noremap <Down> :echo "NO" <CR>
 
+nnoremap cw ciw
+nnoremap dw diw
+
 set background=dark
 set laststatus=2
 

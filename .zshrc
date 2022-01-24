@@ -127,6 +127,11 @@ function commit() {
 	git commit -m "$1"
 }
 
+function ds() {
+    cd ~/home/dataStructs
+    tmux new -s dataStructs
+}
+
 alias la='ls -la'
 alias ll='ls -l'
 alias ls='ls'
