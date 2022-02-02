@@ -132,6 +132,17 @@ function ds() {
     tmux new -s dataStructs
 }
 
+function bigstart() {
+    multipull
+    brew update
+    brew upgrade
+}
+
+function multipull() {
+    find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;
+}
+
+alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
 alias la='ls -la'
 alias ll='ls -l'
 alias ls='ls'
@@ -153,5 +164,4 @@ alias mk='make'
 alias mka='make all'
 alias mkc='make clean'
 alias home='cd ~/home'
-alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
 alias add='git add --all --verbose'
