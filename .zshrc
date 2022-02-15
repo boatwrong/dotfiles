@@ -142,6 +142,12 @@ function multipull() {
     find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;
 }
 
+function rn()
+{
+    make
+    ./a.out < input
+}
+
 alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
 alias la='ls -la'
 alias ll='ls -l'
@@ -165,3 +171,5 @@ alias mka='make all'
 alias mkc='make clean'
 alias home='cd ~/home'
 alias add='git add --all --verbose'
+alias email='open /Applications/Microsoft\ Outlook.app'
+alias spotify='open /Applications/Spotify.app'
