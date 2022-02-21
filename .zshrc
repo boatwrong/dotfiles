@@ -148,6 +148,12 @@ function rn()
     ./a.out < input
 }
 
+function matlab()
+{
+    cd /Applications/MATLAB_R2021a.app/bin
+    ./matlab -nodesktop -nosplash
+}
+
 alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
 alias la='ls -la'
 alias ll='ls -l'
