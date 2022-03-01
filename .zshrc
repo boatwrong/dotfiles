@@ -146,6 +146,7 @@ function rn()
 {
     make
     ./a.out < input
+    
 }
 
 alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
@@ -173,3 +174,6 @@ alias home='cd ~/home'
 alias add='git add --all --verbose'
 alias email='open /Applications/Microsoft\ Outlook.app'
 alias spotify='open /Applications/Spotify.app'
+alias gaa='add'
+alias sleep='pmset sleepnow'
+alias reboot='sudo shutdown -r now'
