@@ -145,8 +145,7 @@ function multipull() {
 function rn()
 {
     make
-    ./a.out < input
-    
+    ./a.out
 }
 
 function matlab()
