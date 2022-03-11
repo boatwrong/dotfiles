@@ -155,9 +155,9 @@ function matlab()
 }
 
 alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
-alias la='ls -la'
-alias ll='ls -l'
-alias ls='ls'
+alias la='ls -aGF'
+alias ll='ls -laGF'
+alias ls='ls -GF'
 alias status='git status'
 alias python='python3'
 alias apps='cd ~/repos/reactApps'
