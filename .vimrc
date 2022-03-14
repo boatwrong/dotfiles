@@ -60,7 +60,7 @@ inoremap <c-d> <esc>ddi
 " from insert mode uppercase the word you are typing in
 inoremap <c-u> <esc>viwU<esc>ea
 " same but for normal mode where your cursor is
-nnoremap <c-u> viwU
+nnoremap <leader>U viwU
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " easier write quit
