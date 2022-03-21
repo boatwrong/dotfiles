@@ -38,7 +38,7 @@ vnoremap <Down>  <nop>
 "" }}}
 
 " remaps {{{
-nnoremap <leader>yfo :YcmCompleter Format
+nnoremap <silent> <leader>go :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
 nnoremap <leader>js :!node %<CR>
