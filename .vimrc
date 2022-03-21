@@ -53,9 +53,9 @@ nnoremap <leader>; <C-w><right>
 " snipps {{{
 " nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>
 nnoremap ,html :call SetupHTML()<CR>
-nnoremap ,c :-1read $HOME/.vim/.skeleton.c<CR>
-autocmd Filetype c nnoremap <buffer> ,f :-1read $HOME/.vim/.skeleton.cfunction<CR>jo
-autocmd Filetype js nnoremap <buffer> ,f :-1read $HOME/.vim/.skeleton.jsfunction<CR>jo
+nnoremap ,c :-1read $HOME/home/dotfiles/skeletons/c<CR>
+autocmd Filetype c nnoremap <buffer> ,f :-1read $HOME/home/skeletons/cfunc<CR>jo
+autocmd Filetype js nnoremap <buffer> ,f :-1read $HOME/home/skeletons/jsfunc<CR>jo
 " }}}
 " }}}
 
@@ -113,14 +113,14 @@ let g:pretter#quickfix_enabled = 0
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
 
 function! SetupHTML()
-    :-1read $HOME/.vim/.skeleton.html
+    :-1read $HOME/home/dotfiles/skeletons/html
     :w
     :e style.css
-    :-1read $HOME/.vim/.skeleton.css
+    :-1read $HOME/home/dotfiles/skeletons/css
     :w
     :bd
     :e index.js
-    :-1read $HOME/.vim/.skeleton.js
+    :-1read $HOME/home/dotfiles/skeletons/js
     :w
     :bn
     :bd index.js
