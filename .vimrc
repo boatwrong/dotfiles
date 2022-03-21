@@ -51,7 +51,8 @@ nnoremap <leader>a <C-w><left>
 nnoremap <leader>; <C-w><right>
 "
 " snipps {{{
-nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>
+" nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>
+nnoremap ,html :call SetupHTML()<CR>
 nnoremap ,c :-1read $HOME/.vim/.skeleton.c<CR>
 autocmd Filetype c nnoremap <buffer> ,f :-1read $HOME/.vim/.skeleton.cfunction<CR>jo
 autocmd Filetype js nnoremap <buffer> ,f :-1read $HOME/.vim/.skeleton.jsfunction<CR>jo
@@ -110,6 +111,22 @@ au FileType html let b:delimitMate_autoclose = 0
 let g:closetag_filenames = "*.c,*.java,*.html,*.js"
 let g:pretter#quickfix_enabled = 0
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
+
+function! SetupHTML()
+    :-1read $HOME/.vim/.skeleton.html
+    :w
+    :e style.css
+    :-1read $HOME/.vim/.skeleton.css
+    :w
+    :bd
+    :e index.js
+    :-1read $HOME/.vim/.skeleton.js
+    :w
+    :bn
+    :bd index.js
+endfunction
+    
+
 " }}}
 
 " NO ARROWS!!! {{{
