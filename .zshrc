@@ -122,16 +122,6 @@ function mcd() {
 	cd $1
 }
 
-function commit() {
-	git add -A
-	git commit -m "$1"
-}
-
-function ds() {
-    cd ~/home/dataStructs
-    tmux new -s dataStructs
-}
-
 function bigstart() {
     multipull
     brew update
@@ -165,9 +155,9 @@ alias push='git push'
 alias zz='vim ~/home/dotfiles/.zshrc'
 alias nc='vim ~/home/dotfiles/.vimrc'
 alias so='source ~/.zshrc'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+# alias ..='cd ..'
+# alias ...='cd ../..'
+# alias ....='cd ../../..'
 alias a='cd ~/home'
 alias d='./a.out'
 alias c='clear'
