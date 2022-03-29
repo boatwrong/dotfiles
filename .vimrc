@@ -38,9 +38,6 @@ vnoremap <Down>  <nop>
 "" }}}
 
 " remaps {{{
-nnoremap <silent> <leader>go :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent> <leader>gf :YcmCompleter FixIt<CR>
 nnoremap <leader>js :!node %<CR>
 nnoremap <leader>cc <c-w>z
 nnoremap cw ciw
@@ -49,6 +46,7 @@ nnoremap <leader>d dd
 nnoremap <leader>c ddO
 nnoremap <leader>a <C-w><left>
 nnoremap <leader>; <C-w><right>
+inoremap jk <esc>
 "
 " snipps {{{
 " nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>
@@ -73,7 +71,9 @@ nnoremap <leader>U viwU
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 " easier write quit
-nnoremap zz :wq<CR>
+nnoremap ZZ :wq<CR>
+nnoremap zz :w<CR>
+nnoremap X <c-z>
 "put in empty lines in normal mode
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
@@ -99,9 +99,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'alvan/vim-closetag'
 Plug 'itchyny/lightline.vim'
-Plug 'ycm-core/YouCompleteMe'
+"Plug 'ycm-core/YouCompleteMe'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-surround'
 call plug#end()
 " }}}
 
@@ -110,7 +111,6 @@ colorscheme gruvbox
 au FileType html let b:delimitMate_autoclose = 0
 let g:closetag_filenames = "*.c,*.java,*.html,*.js"
 let g:pretter#quickfix_enabled = 0
-let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
 
 function! SetupHTML()
     :-1read $HOME/home/dotfiles/skeletons/html
