@@ -47,6 +47,7 @@ nnoremap <leader>c ddO
 nnoremap <leader>a <C-w><left>
 nnoremap <leader>; <C-w><right>
 inoremap jk <esc>
+autocmd Filetype c nnoremap <buffer>  <leader>/ I// <esc>
 "
 " snipps {{{
 " nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>
@@ -100,10 +101,21 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'alvan/vim-closetag'
 Plug 'itchyny/lightline.vim'
 "Plug 'ycm-core/YouCompleteMe'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 call plug#end()
+
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 " }}}
 
 " extras {{{
