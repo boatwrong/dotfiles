@@ -14,7 +14,6 @@ set autoindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 set backspace=indent,eol,start
 set path+=**
 set wildmenu
@@ -95,17 +94,23 @@ nnoremap <leader>U viwU<esc>
 """""
 " }}}
 
-" plug {{{
+" plug {{{za
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'alvan/vim-closetag'
 Plug 'itchyny/lightline.vim'
+<<<<<<< HEAD
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+=======
+Plug 'ycm-core/YouCompleteMe'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+>>>>>>> 08887145817d2c8a06647d6b967f7ed2c0c1d708
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 call plug#end()
 
+<<<<<<< HEAD
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -115,6 +120,16 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+=======
+" ycm {{{
+let g:ycm_semantic_triggers = {
+	\   'python, javascript, c, java': [ 're!\w{2}' ]
+	\ }
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" }}}
+>>>>>>> 08887145817d2c8a06647d6b967f7ed2c0c1d708
 
 " }}}
 
