@@ -14,7 +14,6 @@ set autoindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 set backspace=indent,eol,start
 set path+=**
 set wildmenu
@@ -94,16 +93,26 @@ nnoremap <leader>U viwU<esc>
 """""
 " }}}
 
-" plug {{{
+" plug {{{za
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'alvan/vim-closetag'
 Plug 'itchyny/lightline.vim'
-"Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 call plug#end()
+
+" ycm {{{
+let g:ycm_semantic_triggers = {
+	\   'python, javascript, c, java': [ 're!\w{2}' ]
+	\ }
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" }}}
+
 " }}}
 
 " extras {{{
