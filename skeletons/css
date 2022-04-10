@@ -13,6 +13,6 @@ footer
     text-align: center;
 }
 
-body
+main
 {
 }
