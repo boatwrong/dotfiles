@@ -19,6 +19,7 @@ set path+=**
 set wildmenu
 set background=dark
 set laststatus=2
+set noswapfile
 "}}}
 
 " NO ARROWS!!! {{{
@@ -46,7 +47,11 @@ nnoremap <leader>c ddO
 nnoremap <leader>a <C-w><left>
 nnoremap <leader>; <C-w><right>
 inoremap jk <esc>
-autocmd Filetype c nnoremap <buffer>  <leader>/ I// <esc>
+autocmd Filetype c nnoremap <buffer>  <leader>/ 0i//<esc>
+autocmd Filetype python nnoremap <buffer>  <leader>/ <esc>0i#<esc>
+autocmd Filetype c nnoremap <leader>py :call RunC()<CR>
+autocmd Filetype python nnoremap <leader>py :exe "!tmux send-keys -t 1 'py %' Enter"<CR><CR>
+
 "
 " snipps {{{
 " nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>
@@ -137,6 +142,13 @@ function! SetupHTML()
     :bd index.js
 endfunction
     
+function! RunC()
+    :!gcc %
+	:call feedkeys("\<CR>")
+	:exe "!tmux send-keys -t 1 './a.out' Enter"
+	:call feedkeys("\<CR>")
+
+endfunction
 
 " }}}
 
@@ -157,4 +169,5 @@ vnoremap <Down>  <nop>
 
 set foldmethod=marker
 set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
+
 
