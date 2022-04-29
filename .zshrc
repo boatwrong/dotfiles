@@ -144,6 +144,14 @@ function matlab()
     ./matlab -nodesktop -nosplash
 }
 
+function browserTest()
+{
+	open -a /Applications/Google\ Chrome.app $1
+	open -a /Applications/Safari.app $1
+	open -a /Applications/Firefox.app $1
+	open -a /Applications/Opera.app $1
+}
+
 alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
 alias la='ls -aGF'
 alias ll='ls -laGF'
@@ -171,4 +179,4 @@ alias minify='~/minify.zsh'
 alias dots='cd ~/home/dotfiles'
 alias sshdesk='ssh bryantboatright@bryants-imac.attlocal.net'
 alias sshlap='ssh bryantboatright@bryants-macbook.attlocal.net'
-alias gl='git log --all --graph --decorate'
+alias gl='git log --all --graph --decorate --oneline'
