@@ -131,9 +131,17 @@ function bigstart() {
 function multipull() {
     find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;
 }
+
 function multipush() {
     find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} push \;
 }
+
+function superPush() {
+    find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} add -A \;
+    find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} commit -m 'big push' \;
+    find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} push \;
+}
+
 
 function rn()
 {
@@ -155,7 +163,6 @@ function browserTest()
 	open -a /Applications/Opera.app $1
 }
 
-alias multipull='find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;'
 alias la='ls -aGF'
 alias ll='ls -laGF'
 alias ls='ls -GF'
