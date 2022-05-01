@@ -131,6 +131,9 @@ function bigstart() {
 function multipull() {
     find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} pull \;
 }
+function multipush() {
+    find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} push \;
+}
 
 function rn()
 {
