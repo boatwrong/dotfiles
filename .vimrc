@@ -109,6 +109,7 @@ Plug 'ycm-core/YouCompleteMe'
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
+Plug 'ap/vim-css-color'
 call plug#end()
 
 " ycm {{{

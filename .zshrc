@@ -137,9 +137,9 @@ function multipush() {
 }
 
 function superPush() {
-    find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} add -A \;
-    find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} commit -m 'big push' \;
-    find . -mindepth 1 -maxdepth 3 -type d -print -exec git -C {} push \;
+    find . -mindepth 1 -maxdepth 4 -type d -print -exec git -C {} add -A \;
+    find . -mindepth 1 -maxdepth 4 -type d -print -exec git -C {} commit -m 'big push' \;
+    find . -mindepth 1 -maxdepth 4 -type d -print -exec git -C {} push \;
 }
 
 
@@ -190,3 +190,8 @@ alias dots='cd ~/home/dotfiles'
 alias sshdesk='ssh bryantboatright@bryants-imac.attlocal.net'
 alias sshlap='ssh bryantboatright@bryants-macbook.attlocal.net'
 alias gl='git log --all --graph --decorate --oneline'
+
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
+export PROJECT_HOME=$HOME/Devel
+source /Library/Frameworks/Python.framework/Versions/3.10/bin/virtualenvwrapper.sh
