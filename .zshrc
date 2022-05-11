@@ -70,9 +70,9 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+source $ZSH/oh-my-zsh.sh
 plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -190,3 +190,7 @@ alias dots='cd ~/home/dotfiles'
 alias sshdesk='ssh bryantboatright@bryants-imac.attlocal.net'
 alias sshlap='ssh bryantboatright@bryants-macbook.attlocal.net'
 alias gl='git log --all --graph --decorate --oneline'
+
+
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
