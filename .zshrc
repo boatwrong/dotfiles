@@ -191,10 +191,3 @@ alias sshdesk='ssh bryantboatright@bryants-imac.attlocal.net'
 alias sshlap='ssh bryantboatright@bryants-macbook.attlocal.net'
 alias gl='git log --all --graph --decorate --oneline'
 
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/Library/Frameworks/Python.framework/Versions/3.10/bin/python3
-export PROJECT_HOME=$HOME/Devel
-source /Library/Frameworks/Python.framework/Versions/3.10/bin/virtualenvwrapper.sh
-
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
