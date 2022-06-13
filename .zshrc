@@ -195,4 +195,4 @@ alias sshlap='ssh bryantboatright@bryants-macbook.attlocal.net'
 alias gl='git log --all --graph --decorate --oneline'
 alias gc='git commit'
 alias pip='pip3'
-
+alias gcc='gcc-11'

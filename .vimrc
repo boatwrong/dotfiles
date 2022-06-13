@@ -99,7 +99,7 @@ nnoremap <leader>U viwU<esc>
 """""
 " }}}
 
-" plug {{{za
+" plug {{{
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
 Plug 'alvan/vim-closetag'
