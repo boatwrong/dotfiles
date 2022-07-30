@@ -106,10 +106,10 @@ Plug 'alvan/vim-closetag'
 Plug 'itchyny/lightline.vim'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ycm-core/YouCompleteMe'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
-Plug 'ap/vim-css-color'
+" Plug 'ap/vim-css-color'
 call plug#end()
 
 " ycm {{{
@@ -126,7 +126,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 " extras {{{
 colorscheme gruvbox 
 au FileType html let b:delimitMate_autoclose = 0
-let g:closetag_filenames = "*.c,*.java,*.html,*.js"
+let g:closetag_filenames = "*.c,*.html,*.js,*.java"
 let g:pretter#quickfix_enabled = 0
 
 function! SetupHTML()
