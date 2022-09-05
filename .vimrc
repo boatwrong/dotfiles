@@ -12,6 +12,7 @@ set signcolumn=yes
 set colorcolumn=80
 set autoindent
 set tabstop=4
+set expandtab
 set softtabstop=4
 set shiftwidth=4
 set backspace=indent,eol,start
