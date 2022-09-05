@@ -40,8 +40,6 @@ vnoremap <Down>  <nop>
 " remaps {{{
 nnoremap <leader>js :!node %<CR>
 nnoremap <leader>cc <c-w>z
-nnoremap cw ciw
-nnoremap dw diw
 nnoremap <leader>d dd
 nnoremap <leader>c ddO
 nnoremap <leader>a <C-w><left>
