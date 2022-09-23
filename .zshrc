@@ -166,6 +166,14 @@ function browserTest()
 	open -a /Applications/Opera.app $1
 }
 
+function serverUploadApp() {
+    scp -ri /Users/bryantboatright/.ssh/moneyGlassesKeyPair.pem /Users/bryantboatright/home/team-project-3203/Server/app.js admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com:/home/admin/team-project-3203/Server/app.js
+}
+
+function serverUploadFull() {
+    scp -ri /Users/bryantboatright/.ssh/moneyGlassesKeyPair.pem /Users/bryantboatright/home/team-project-3203/Server admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com:/home/admin/team-project-3203/Server/
+}
+
 alias la='ls -aGF'
 alias ll='ls -laGF'
 alias ls='ls -GF'
