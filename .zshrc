@@ -1,3 +1,4 @@
+# {{{
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -118,7 +119,7 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 # 
 # color=always
 ##########################################################################
-
+# }}}
 function mcd() {
 	mkdir $1
 	cd $1
@@ -145,7 +146,6 @@ function superPush() {
     find . -mindepth 1 -maxdepth 4 -type d -print -exec git -C {} push \;
 }
 
-
 function rn()
 {
     make
@@ -164,6 +164,18 @@ function browserTest()
 	open -a /Applications/Safari.app $1
 	open -a /Applications/Firefox.app $1
 	open -a /Applications/Opera.app $1
+}
+
+function rebuild-server() {
+    sudo docker stop server3203;
+    sudo docker system prune -f;
+    sudo docker rmi boatwrong/server3203;
+    sudo docker build -t boatwrong/server3203 .;
+    sudo docker push boatwrong/server3203
+}
+
+function putonedrive() {
+    mv $1 /Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/
 }
 
 alias la='ls -aGF'
@@ -204,3 +216,6 @@ alias ivm='vim'
 alias precap='cd /Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/4163_team_files'
 alias gaa='git add -Av'
 alias gch='git checkout'
+alias sshserver='ssh -i "~/.ssh/moneyGlassesKeyPair.pem" admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com'
+alias uploadServer='cd /Users/bryantboatright/home/team-project-3203/Server; docker rmi boatwrong/server3203; docker build -t boatwrong/server3203 .; docker push boatwrong/server3203; sshserver'
+alias oned='/Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/'

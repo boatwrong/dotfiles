@@ -46,7 +46,6 @@ nnoremap <leader>c ddO
 nnoremap <leader>a <C-w><left>
 nnoremap <leader>; <C-w><right>
 inoremap jk <esc>
-autocmd Filetype c nnoremap <buffer>  <leader>/ 0i//<esc>
 autocmd Filetype python nnoremap <buffer>  <leader>/ <esc>0i#<esc>
 autocmd Filetype c nnoremap <leader>py :call RunC()<CR>
 autocmd Filetype python nnoremap <leader>py :exe "!tmux send-keys -t 1 'py %' Enter"<CR><CR>
