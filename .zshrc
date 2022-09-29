@@ -146,45 +146,20 @@ function superPush() {
     find . -mindepth 1 -maxdepth 4 -type d -print -exec git -C {} push \;
 }
 
+# Make and run C program where executable is called a.out
 function rn()
 {
     make
     ./a.out
 }
 
-function matlab()
-{
-    cd /Applications/MATLAB_R2021a.app/bin
-    ./matlab -nodesktop -nosplash
-}
-
-function browserTest()
-{
-	open -a /Applications/Google\ Chrome.app $1
-	open -a /Applications/Safari.app $1
-	open -a /Applications/Firefox.app $1
-	open -a /Applications/Opera.app $1
-}
-
-<<<<<<< HEAD
+# Docker commands to rebuild and push server image to docker repository
 function rebuild-server() {
     sudo docker stop server3203;
     sudo docker system prune -f;
     sudo docker rmi boatwrong/server3203;
     sudo docker build -t boatwrong/server3203 .;
     sudo docker push boatwrong/server3203
-}
-
-function putonedrive() {
-    mv $1 /Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/
-=======
-function serverUploadApp() {
-    scp -ri /Users/bryantboatright/.ssh/moneyGlassesKeyPair.pem /Users/bryantboatright/home/team-project-3203/Server/app.js admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com:/home/admin/team-project-3203/Server/app.js
-}
-
-function serverUploadFull() {
-    scp -ri /Users/bryantboatright/.ssh/moneyGlassesKeyPair.pem /Users/bryantboatright/home/team-project-3203/Server admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com:/home/admin/team-project-3203/Server/
->>>>>>> a2a997bfdfaefbf9d31657b39f8b7920bfb2ad62
 }
 
 alias la='ls -aGF'
