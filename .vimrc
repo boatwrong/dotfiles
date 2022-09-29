@@ -123,7 +123,7 @@ let g:EclimFileTypeValidate = 0
 " extras {{{
 colorscheme gruvbox 
 au FileType html let b:delimitMate_autoclose = 0
-let g:closetag_filenames = "*.c,*.html,*.js,*.java"
+let g:closetag_filenames = "*.c,*.html,*.js"
 let g:pretter#quickfix_enabled = 0
 
 function! SetupHTML()

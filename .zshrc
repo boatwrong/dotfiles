@@ -166,6 +166,7 @@ function browserTest()
 	open -a /Applications/Opera.app $1
 }
 
+<<<<<<< HEAD
 function rebuild-server() {
     sudo docker stop server3203;
     sudo docker system prune -f;
@@ -176,6 +177,14 @@ function rebuild-server() {
 
 function putonedrive() {
     mv $1 /Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/
+=======
+function serverUploadApp() {
+    scp -ri /Users/bryantboatright/.ssh/moneyGlassesKeyPair.pem /Users/bryantboatright/home/team-project-3203/Server/app.js admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com:/home/admin/team-project-3203/Server/app.js
+}
+
+function serverUploadFull() {
+    scp -ri /Users/bryantboatright/.ssh/moneyGlassesKeyPair.pem /Users/bryantboatright/home/team-project-3203/Server admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com:/home/admin/team-project-3203/Server/
+>>>>>>> a2a997bfdfaefbf9d31657b39f8b7920bfb2ad62
 }
 
 alias la='ls -aGF'
