@@ -1,0 +1,12 @@
+###############################
+# Machine Specific Zsh Config #
+###############################
+
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Move argument(s) to general onedrive folder
+function putonedrive() {
+    for i in $@
+        mv $i /Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma/
+}
