@@ -1,4 +1,5 @@
 " general {{{
+set nowrap
 syntax on
 let mapleader = " "
 filetype on

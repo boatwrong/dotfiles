@@ -111,9 +111,7 @@ function superPush() {
 }
 
 # Make and run C program where executable is called a.out
-function rn()
-{
-    make
+function rn() { make
     ./a.out
 }
 
@@ -160,6 +158,9 @@ alias gaa='git add -Av'
 alias gch='git checkout'
 alias sshserver='ssh -i "~/.ssh/moneyGlassesKeyPair.pem" admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com'
 alias uploadServer='cd /Users/bryantboatright/home/team-project-3203/Server; docker rmi boatwrong/server3203; docker build -t boatwrong/server3203 .; docker push boatwrong/server3203; sshserver'
-alias oned='/Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/'
+#alias oned='/Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/'
 alias gcc='clang'
+#alias sshlubuntu='ssh boater@192.168.1.138'
+#alias sshmini='ssh bryant@themini.local'
+alias nf='neofetch'
 source /Users/bryantboatright/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

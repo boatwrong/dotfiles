@@ -10,3 +10,5 @@ function putonedrive() {
     for i in $@
         mv $i /Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma/
 }
+
+alias sshmini='ssh bryant@10.2.0.2'
