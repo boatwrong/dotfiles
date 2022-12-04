@@ -1,61 +1,23 @@
 # {{{
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="intheloop"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' mode auto      # update automatically without asking
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -73,8 +35,10 @@ ZSH_THEME="intheloop"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins+=(k)
 
 
 # User configuration
@@ -147,9 +111,7 @@ function superPush() {
 }
 
 # Make and run C program where executable is called a.out
-function rn()
-{
-    make
+function rn() { make
     ./a.out
 }
 
@@ -168,8 +130,8 @@ alias ls='ls -GF'
 alias status='git status'
 alias py='python3'
 alias apps='cd ~/repos/reactApps'
-alias zz='vim ~/home/dotfiles/.zshrc'
-alias nc='vim ~/home/dotfiles/.vimrc'
+alias zz='vim ~/.zshrc'
+alias nc='vim ~/.vimrc'
 alias so='source ~/.zshrc'
 alias a='cd ~/home'
 alias d='./a.out'
@@ -183,8 +145,6 @@ alias spotify='open /Applications/Spotify.app'
 alias sleep='pmset sleepnow'
 alias minify='~/minify.zsh'
 alias dots='cd ~/home/dotfiles'
-alias sshdesk='ssh bryantboatright@bryants-imac.attlocal.net'
-alias sshlap='ssh bryantboatright@bryants-macbook.attlocal.net'
 alias gs='git status'
 alias gl='git log --all --graph --decorate --oneline'
 alias push='git push'
@@ -192,10 +152,7 @@ alias pull='git pull'
 alias gc='git commit -m'
 alias gaa='git add -Av'
 alias gcb='git checkout -b'
-alias gch='git checkout'
 alias pip='pip3'
-alias gcc='gcc-11'
-alias sshserver='ssh boater@ubuntu'
 alias ivm='vim'
 alias precap='cd /Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/4163_team_files'
 alias gaa='git add -Av'
@@ -203,4 +160,9 @@ alias gch='git checkout'
 #alias sshserver='ssh -i "~/.ssh/moneyGlassesKeyPair.pem" admin@ec2-34-211-69-170.us-west-2.compute.amazonaws.com'
 alias sshserver='ssh -i "~/.ssh/web-server.pem" admin@ec2-3-225-80-65.compute-1.amazonaws.com'
 alias uploadServer='cd /Users/bryantboatright/home/team-project-3203/Server; docker rmi boatwrong/server3203; docker build -t boatwrong/server3203 .; docker push boatwrong/server3203; sshserver'
-alias oned='/Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/'
+#alias oned='/Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/'
+alias gcc='clang'
+#alias sshlubuntu='ssh boater@192.168.1.138'
+#alias sshmini='ssh bryant@themini.local'
+alias nf='neofetch'
+source /Users/bryantboatright/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,4 +1,5 @@
 " general {{{
+set nowrap
 syntax on
 let mapleader = " "
 filetype on
@@ -19,6 +20,7 @@ set backspace=indent,eol,start
 set path+=**
 set wildmenu
 set background=dark
+set nowrap
 set laststatus=2
 set noswapfile
 "}}}
@@ -100,9 +102,9 @@ nnoremap <leader>U viwU<esc>
 " plug {{{
 call plug#begin('~/.vim/plugged')
 Plug 'gruvbox-community/gruvbox'
+Plug 'ycm-core/YouCompleteMe'
 Plug 'alvan/vim-closetag'
 Plug 'itchyny/lightline.vim'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 call plug#end()
@@ -123,7 +125,7 @@ let g:EclimFileTypeValidate = 0
 " extras {{{
 colorscheme gruvbox 
 au FileType html let b:delimitMate_autoclose = 0
-let g:closetag_filenames = "*.c,*.html,*.js"
+let g:closetag_filenames = "*.html,*.js"
 let g:pretter#quickfix_enabled = 0
 
 function! SetupHTML()

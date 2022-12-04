@@ -1,0 +1,7 @@
+name: test-workflow
+on: [push]
+jobs:
+  test:
+    runs-on: self-hosted
+    steps: echo "woop woop this worked!"
+
