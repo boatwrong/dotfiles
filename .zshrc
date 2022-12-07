@@ -163,6 +163,6 @@ alias uploadServer='cd /Users/bryantboatright/home/team-project-3203/Server; doc
 #alias oned='/Users/bryantboatright/Library/CloudStorage/OneDrive-UniversityofOklahoma\(1\)/'
 alias gcc='clang'
 #alias sshlubuntu='ssh boater@192.168.1.138'
-#alias sshmini='ssh bryant@themini.local'
+alias sshmini='ssh boater@192.168.1.177'
 alias nf='neofetch'
 source /Users/bryantboatright/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
