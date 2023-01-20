@@ -37,7 +37,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Add wisely, as too many plugins slow down shell startup.
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 plugins+=(k)
 
 
@@ -159,4 +158,3 @@ alias gaa='git add -Av'
 alias gch='git checkout'
 alias sshserver='ssh -i "~/.ssh/web-server.pem" admin@ec2-3-225-80-65.compute-1.amazonaws.com'
 alias gcc='clang'
-source /Users/bryantboatright/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
