@@ -1,6 +1,8 @@
 # {{{
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 
 ZSH_THEME="intheloop"
 zstyle ':omz:update' mode auto      # update automatically without asking
@@ -131,7 +133,6 @@ alias status='git status'
 alias py='python3'
 alias apps='cd ~/repos/reactApps'
 alias zz='vim ~/.zshrc'
-alias nc='vim ~/.vimrc'
 alias so='source ~/.zshrc'
 alias a='cd ~/home'
 alias d='./a.out'
