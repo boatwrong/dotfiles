@@ -41,6 +41,8 @@ vnoremap <Down>  <nop>
 "" }}}
 
 " remaps {{{
+nnoremap <C-t> :ter<CR>
+nnoremap <C-p><C-y> :!python3 %<CR>
 nnoremap <leader>js :!node %<CR>
 nnoremap <leader>cc <c-w>z
 nnoremap <leader>d dd
