@@ -126,3 +126,6 @@ exec "xautolock -detectsleep -time 5 -locker \"i3lock -c 000000\""
 bar {
         status_command i3status
 }
+
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 1
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1

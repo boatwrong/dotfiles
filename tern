@@ -1,0 +1,6 @@
+// .tern-config
+{
+    "plugins": {
+        "node": {}
+    }
+}
