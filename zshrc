@@ -126,6 +126,7 @@ function rebuild-server() {
 alias la='ls -aGF'
 alias ll='ls -laGF'
 alias l='ls -GF'
+alias lll='ls -laGF | less'
 alias status='git status'
 alias py='python3'
 alias apps='cd ~/repos/reactApps'
