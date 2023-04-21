@@ -92,6 +92,7 @@ bindsym $mod+k workspace $ws6
 bindsym $mod+l workspace $ws7
 bindsym $mod+semicolon workspace $ws8
 
+
 # move focused container to workspace
 bindsym $mod+Shift+a move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+s move container to workspace $ws2; workspace $ws2
@@ -111,8 +112,9 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-msg exit"
 
-bindsym $mod+t exec '/home/boater/scripts/Bitwarden-2023.2.0-x86_64.AppImage'
 bindsym $mod+b exec firefox
+bindsym $mod+Shift+t exec '/home/boater/bin/bitwarden.AppImage'
+bindsym $mod+Shift+i exec brave-browser
 bindsym $mod+w kill
 
 # lock the screen!
