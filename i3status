@@ -1,0 +1,47 @@
+general {
+    output_format = "i3bar"
+    colors = true
+    interval = 5
+}
+
+order += "disk /"
+order += "memory"
+order += "ethernet enp4s0f0"
+order += "wireless wlan0"
+order += "load"
+order += "tztime local"
+
+wireless wlan0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_down = ""
+}
+
+ethernet enp4s0f0 {
+    format_up = "E: %ip (%speed)"
+    format_down = ""
+}
+
+tztime local {
+    format = "%Y-%m-%d %H:%M:%S"
+}
+
+load {
+    format = "%5min"
+}
+
+cpu_temperature 0 {
+    format = "T: %degrees °C"
+        path = "/sys/devices/platform/coretemp.0/temp1_input"
+}
+
+memory {
+    format = "memory: %free - %used / %total"
+}
+
+disk "/" {
+    format = "disk: %free - %used / %total"
+}
+
+read_file uptime {
+    path = "/proc/uptime"
+}
