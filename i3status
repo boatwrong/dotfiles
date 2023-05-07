@@ -1,47 +1,46 @@
 general {
     output_format = "i3bar"
-    colors = true
-    interval = 5
+        colors = true
+        interval = 5
 }
 
+order += "volume master"
 order += "disk /"
 order += "memory"
-order += "ethernet enp4s0f0"
-order += "wireless wlan0"
-order += "load"
-order += "tztime local"
+order += "ethernet enp2s0f0"
+order += "wireless wlp3s0"
 
-wireless wlan0 {
-    format_up = "W: (%quality at %essid, %bitrate) %ip"
-    format_down = ""
+volume master {
+    format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
 
-ethernet enp4s0f0 {
+wireless wlp3s0 {
+    format_up = "W: (%quality at %essid, %bitrate) %ip"
+        format_down = ""
+}
+
+ethernet enp2s0f0 {
     format_up = "E: %ip (%speed)"
-    format_down = ""
+        format_down = ""
+}
+
+tztime chicago {
+    format = "%Y-%m-%d %H:%M:%S"
 }
 
 tztime local {
     format = "%Y-%m-%d %H:%M:%S"
 }
 
-load {
-    format = "%5min"
-}
-
-cpu_temperature 0 {
-    format = "T: %degrees °C"
-        path = "/sys/devices/platform/coretemp.0/temp1_input"
-}
-
 memory {
-    format = "memory: %free - %used / %total"
+    format = "memory: %used / %total"
 }
 
 disk "/" {
-    format = "disk: %free - %used / %total"
+    format = "disk: %used / %total"
 }
 
-read_file uptime {
-    path = "/proc/uptime"
-}
