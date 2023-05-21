@@ -1,4 +1,5 @@
 # {{{
+xmodmap .xmodmap
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR=/usr/bin/vim
@@ -155,7 +156,6 @@ alias precap='cd /Users/bryantboatright/Library/CloudStorage/OneDrive-University
 alias gaa='git add -Av'
 alias gch='git checkout'
 alias sshserver='ssh -i "~/.ssh/web-server.pem" admin@ec2-3-225-80-65.compute-1.amazonaws.com'
-alias gcc='gcc-12'
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -171,4 +171,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-alias cat='batcat'
+alias vim='nvim'
+alias vi='nvim'
