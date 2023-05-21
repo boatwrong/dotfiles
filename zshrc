@@ -156,19 +156,3 @@ alias gaa='git add -Av'
 alias gch='git checkout'
 alias sshserver='ssh -i "~/.ssh/web-server.pem" admin@ec2-3-225-80-65.compute-1.amazonaws.com'
 alias gcc='gcc-12'
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/boater/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/boater/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/boater/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/boater/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-alias cat='batcat'
