@@ -41,10 +41,6 @@ exec --no-startup-id xsetroot -solid "#333333"
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-### audio controls dont work, alsa mixer used down below
-### bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
-### bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
-### bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -141,10 +137,10 @@ bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1
 # TODO figure out how to manage increasing/decreasing volume. Mute toggle works 
 # at the moment, but am going to currently leave volume always muted. 
 #
-# bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1%+"
-# bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1%-"
+bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 +1%"
+bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 -1%"
 #  
 #  This toggle mute command is working XXX do not touch.
- bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
 
 # Pulse Audio controls

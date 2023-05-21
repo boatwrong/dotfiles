@@ -171,4 +171,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-alias cat='batcat'
+alias bat='batcat'
