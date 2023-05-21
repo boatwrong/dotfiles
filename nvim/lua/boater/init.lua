@@ -1,1 +1,2 @@
-print('hello from boater')
+require('boater.set')
+require('boater.remap')
