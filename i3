@@ -10,12 +10,21 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# # Windows style keyboard (alt key left of spacebar)
+# set $mod Mod1
+# set $alt Mod4
+
+# MacOS Style Keyboard (command keys left and right of space bar)
 set $mod Mod4
 set $alt Mod1
 
+# windows style keyboard
+#set $mod Mod4
+#set $alt Mod1
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -39,12 +48,7 @@ exec --no-startup-id nm-applet
 # background color
 exec --no-startup-id xsetroot -solid "#333333"
 
-# Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # start bitwarden on it's own workspace
 
@@ -113,7 +117,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-msg exit"
 
-bindsym $mod+b exec firefox
+bindsym $mod+b exec qutebrowser
 bindsym $mod+Shift+t exec '/home/boater/scripts/bitwarden.AppImage'
 bindsym $mod+Shift+i exec brave-browser
 bindsym $mod+w kill
@@ -133,14 +137,19 @@ bar {
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 1
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 1
 
-# exec --no-startup-id "amixer set Master mute"
-# TODO figure out how to manage increasing/decreasing volume. Mute toggle works 
-# at the moment, but am going to currently leave volume always muted. 
-#
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 +1%"
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 -1%"
-#  
-#  This toggle mute command is working XXX do not touch.
-bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+## AUDIO
+# imac - mac keyboard
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+# bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# Pulse Audio controls
+# # imac - unicomp keyboard
+# set $print 0xff61
+# set $pause 0xff14
+# set $scroll_lock 0xff13
+# 
+#  This toggle mute command is working XXX do not touch.
+# bindsym $print exec "amixer -q set Master,0 toggle"
+# bindsym $pause exec "amixer -q set Master,0 5%-"
+# bindsym $scroll_lock exec "amixer -q set Master,0 5%+"
