@@ -1,4 +1,5 @@
 # {{{
+xmodmap .xmodmap
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export EDITOR=/usr/bin/vim
@@ -156,3 +157,5 @@ alias gaa='git add -Av'
 alias gch='git checkout'
 alias sshserver='ssh -i "~/.ssh/web-server.pem" admin@ec2-3-225-80-65.compute-1.amazonaws.com'
 alias gcc='gcc-12'
+alias vim='nvim'
+alias vi='nvim'
