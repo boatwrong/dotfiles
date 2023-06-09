@@ -117,7 +117,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-msg exit"
 
-bindsym $mod+b exec qutebrowser
+bindsym $mod+b exec firefox
 bindsym $mod+Shift+t exec '/home/boater/scripts/bitwarden.AppImage'
 bindsym $mod+Shift+i exec brave-browser
 bindsym $mod+w kill

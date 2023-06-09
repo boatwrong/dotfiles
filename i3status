@@ -10,6 +10,7 @@ order += "disk /"
 order += "memory"
 order += "ethernet enp4s0f0"
 order += "wireless wlp3s0"
+order += "tztime chicago"
 
 volume master {
     format = "♪: %volume"
@@ -20,17 +21,17 @@ volume master {
 }
 
 wireless wlp3s0 {
-    format_up = "W: (%quality at %essid, %bitrate) %ip"
+    format_up = "wifi: %bitrate %ip"
         format_down = ""
 }
 
 ethernet enp4s0f0 {
-    format_up = "E: %ip (%speed)"
+    format_up = "eth: %ip (%speed)"
         format_down = ""
 }
 
 tztime chicago {
-    format = "%Y-%m-%d %H:%M:%S"
+    format = "%d/%m/%Y %H.%M.%S"
 }
 
 tztime local {
@@ -38,15 +39,15 @@ tztime local {
 }
 
 memory {
-    format = "memory: %used / %total"
+    format = "mem: %used"
 }
 
 disk "/" {
-    format = "disk: %used / %total"
+    format = "disk: %used"
 }
 
 battery 0 {
-        format = "%status %percentage %remaining %emptytime"
+        format = "%status %percentage"
         format_down = "No battery"
         status_chr = "⚡ CHR"
         status_bat = "🔋 BAT"
