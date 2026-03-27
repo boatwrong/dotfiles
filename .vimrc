@@ -1,146 +1,89 @@
-" sets {{{
-set nowrap
+" don't adhere to `vi` rules.
+set nocompatible 
+" allow copy/paste from outside vim.
+set clipboard=unnamed 
+" spacebar is the leader.
+let mapleader = " " 
+" do not wrap text on long lines.
+set nowrap 
+" show line numbers.
+set number 
+" show lines above/below cursor as relative line numbers.
+set relativenumber 
+" show the command being typed or num lines/columns selected.
+set showcmd 
+" show color bar.
+set signcolumn=yes 
+" place color bar at 80'th column.
+set colorcolumn=80 
+" fuzzy file search.
+set path+=** 
+" make autocomplete faster!
+set complete-=i 
+" dark mode.
+set background=dark 
+" always have a status line.
+set laststatus=2 
+" stop making .swap files.
+set noswapfile 
+" no netrw banner
+let g:netrw_banner=0 
+" make netrw sane to use.
+let g:netrw_liststyle=3 
+" Show the active line in insert mode.
+autocmd InsertEnter * set cursorline 
+" hide the active line in insert mode.
+autocmd InsertLeave * set nocursorline 
+set culopt=number
+" run ctags recursively in current dir.
+command! MakeTags !ctags -R .
+" easy escape
+inoremap jk <ESC>
+" easy go to beginning of line.
+nnoremap H 0
+" easy go to beginning of line.
+nnoremap L $
+" " easy (visual) go to beginning of line.
+" vnoremap L $
+" insert empty line below cursor in normal mode.
+nnoremap <leader>o o<ESC>
+" insert empty line above cursor in normal mode.
+nnoremap <leader>O O<ESC>
+" open vimrc in split
+nnoremap <leader>ev :split $MYVIMRC<CR>
+" source vimrc
+nnoremap <leader>sv :source $MYVIMRC<CR>
+" switch to next buffer in buffer list
+nnoremap <leader>bn :bnext<CR>
+" switch to previous buffer in buffer list
+nnoremap <leader>bp :bprevious<CR>
+" switch to last buffer
+nnoremap <leader>bl :blast<CR>
+" delete current buffer
+nnoremap <leader>bd :bdelete<CR>
+
+" TODO: document these.
+filetype plugin indent on
 syntax on
-let mapleader = " "
-filetype on
-filetype indent on
-filetype plugin on
-syntax enable
-set number
-set relativenumber
-set showcmd
-set signcolumn=yes
-set colorcolumn=80
 set autoindent
 set tabstop=4
 set expandtab
 set softtabstop=4
 set shiftwidth=4
 set backspace=indent,eol,start
-set path+=**
-set wildmenu
-set background=dark
-set nowrap
-set laststatus=2
-set noswapfile
-"}}}
 
-" remaps {{{
-nnoremap <C-t> :ter<CR>
-nnoremap <C-p><C-y> :!python3 %<CR>
-nnoremap <leader>js :!node %<CR>
-nnoremap <leader>cc <c-w>z
-nnoremap <leader>d dd
-nnoremap <leader>c ddO
-nnoremap <leader>a <C-w><left>
-nnoremap <leader>; <C-w><right>
-inoremap jk <esc>
-nnoremap ,html :call SetupHTML()<CR>
-nnoremap ,c :-1read $HOME/home/dotfiles/skeletons/c<CR>
-" move to next buffer
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bd :bdelete<CR>
-nnoremap <leader>bp :bprevious<CR>
-" in insert mode, delete line and go back to insert mode
-inoremap <c-d> <esc>ddi
-" from insert mode uppercase the word you are typing in
-inoremap <c-u> <esc>viwU<esc>ea
-" same but for normal mode where your cursor is
-nnoremap <leader>U viwU
-nnoremap <leader>ev :vsplit $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
-" easier write quit
-nnoremap ZZ :wq<CR>
-nnoremap zz :w<CR>
-nnoremap X <c-z>
-"put in empty lines in normal mode
-nnoremap <leader>o o<esc>
-nnoremap <leader>O O<esc>
-" Typa abbreviations!!
-iabbrev waht what
-iabbrev wath what
-iabbrev teh the
-iabbrev BB Bryant Boatright
-" go to beginning or end o line in normal
-nnoremap H I<esc>
-nnoremap L A<esc>
-"surroun word in " or '
-nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
-nnoremap <leader>U viwU<esc>
-" }}}
+" C indent styles.
+set cindent
+set cino=:0,l1,t0,g0,(0
 
-" autocommands {{{
-autocmd Filetype python nnoremap <buffer>  <leader>c I#<esc>
-autocmd Filetype javascript nnoremap <buffer>  <leader>c I//<esc>
-autocmd Filetype typescript nnoremap <buffer>  <leader>c I//<esc>
-autocmd Filetype java nnoremap <buffer>  <leader>c I//<esc>
-autocmd Filetype c nnoremap <buffer>  <leader>c I//<esc>
-autocmd Filetype html nnoremap <buffer>  <leader>c I<!--<esc>A-->
-autocmd Filetype python nnoremap <leader>py :exe "!tmux send-keys -t 1 'py %' Enter"<CR><CR>
-autocmd Filetype c nnoremap <buffer> ,f :-1read $HOME/home/skeletons/cfunc<CR>jo
-autocmd Filetype js nnoremap <buffer> ,f :-1read $HOME/home/skeletons/jsfunc<CR>jo
-" }}}
+" Arrow keys are annoying to bump accidentally, disable them.
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
-" plugins {{{
-call plug#begin('~/.vim/plugged')
-Plug 'gruvbox-community/gruvbox'
-Plug 'ycm-core/YouCompleteMe'
-Plug 'alvan/vim-closetag'
-Plug 'itchyny/lightline.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-surround'
-call plug#end()
-
-" ycm {{{
-let g:ycm_semantic_triggers = {
-	\   'python, javascript, c, java': [ 're!\w{2}' ]
-	\ }
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:syntastic_java_checkers = []
-let g:EclimFileTypeValidate = 0
-" }}}
-colorscheme gruvbox 
-au FileType html let b:delimitMate_autoclose = 0
-let g:closetag_filenames = "*.html,*.js"
-let g:pretter#quickfix_enabled = 0
-
-" }}}
-
-" functions {{{
-function! SetupHTML()
-    :-1read $HOME/home/dotfiles/skeletons/html
-    :w
-    :e style.css
-    :-1read $HOME/home/dotfiles/skeletons/css
-    :w
-    :bd
-    :e index.js
-    :-1read $HOME/home/dotfiles/skeletons/js
-    :w
-    :bn
-    :bd index.js
-endfunction
-
-" NO ARROWS!!! {{{
-nnoremap <Up> <nop>
-nnoremap <Left>  <nop>
-nnoremap <Right> <nop>
-nnoremap <Down>  <nop>
-inoremap <Up> <nop>
-inoremap <Left>  <nop>
-inoremap <Right> <nop>
-inoremap <Down>  <nop>
-vnoremap <Up> <nop>
-vnoremap <Left>  <nop>
-vnoremap <Right> <nop>
-vnoremap <Down>  <nop>
-"" }}}
-" }}}
-
-
-set foldmethod=marker
-set foldtext=v:folddashes.substitute(getline(v:foldstart),'/\\*\\\|\\*/\\\|{{{\\d\\=','','g')
-
-
+" Insert mode wasn't disabling. Specifically disable them.
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>

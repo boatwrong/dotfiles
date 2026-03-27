@@ -1,9 +1,0 @@
-# fast focus desktop
-cmd - a : yabai -m space --focus 1
-cmd - s : yabai -m space --focus 2
-cmd - d : yabai -m space --focus 3
-cmd - f : yabai -m space --focus 4
-cmd - j : yabai -m space --focus 5
-cmd - k : yabai -m space --focus 6
-cmd - l : yabai -m space --focus 7
-cmd - ; : yabai -m space --focus 8
